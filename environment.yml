@@ -1,0 +1,17 @@
+name: cuda-tutorial
+channels:
+  - pytorch
+  - nvidia
+  - conda-forge
+dependencies:
+  - python=3.11
+  - cuda-toolkit=12.8
+  - cmake>=3.18
+  - ninja
+  - numpy
+  - pytest
+  - pytorch::pytorch>=2.2
+  - pytorch::pytorch-cuda=12.8
+  - pip
+  - pip:
+      - triton>=2.2
