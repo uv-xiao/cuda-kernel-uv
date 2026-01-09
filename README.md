@@ -102,7 +102,8 @@ cuda-kernel-tutorial/
 │   ├── 08_tilelang/          # TileLang & high-level DSLs
 │   ├── 09_sparse_attention/  # FlashAttention & sparse patterns
 │   ├── 10_moe_accelerators/  # MoE optimization & SonicMoE
-│   └── 11_capstone/          # Full projects
+│   ├── 11_capstone/          # Full projects
+│   └── 12_llm_serving/       # Mini-SGLang & FlashInfer
 ├── common/                   # Shared utilities
 ├── benchmarks/               # Performance benchmarks
 └── tests/                    # Test harnesses
@@ -145,7 +146,13 @@ cuda-kernel-tutorial/
 | 09 | [Sparse Attention](chapters/09_sparse_attention/) | FlashAttention, DeepSeek sparse attention |
 | 10 | [MoE Accelerators](chapters/10_moe_accelerators/) | Tile-aware optimization, SonicMoE |
 
-### Part 6: Integration (Chapter 11)
+### Part 6: LLM Serving Infrastructure (Chapter 12)
+
+| Chapter | Topic | Key Concepts |
+|---------|-------|--------------|
+| 12 | [LLM Serving Kernels](chapters/12_llm_serving/) | Mini-SGLang, FlashInfer, KV cache, NCCL |
+
+### Part 7: Integration (Chapter 11)
 
 | Chapter | Topic | Key Concepts |
 |---------|-------|--------------|
@@ -197,6 +204,7 @@ nsys profile -o timeline ./build/chapters/03_profiling/examples/matmul
 - Chapters 01-03: 2-3 hours each
 - Chapters 04-06: 4-6 hours each
 - Chapters 07-10: 6-8 hours each
+- Chapter 12: 8-12 hours (includes external projects)
 - Chapter 11: 10+ hours (project-based)
 
 ## Key Resources

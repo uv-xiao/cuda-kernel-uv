@@ -316,6 +316,48 @@ This document outlines the detailed implementation plan for creating a comprehen
 
 ---
 
+### Chapter 12: LLM Serving Integration
+**Goal**: Integrate kernels into LLM serving systems
+
+**Content**:
+1. Mini-SGLang custom kernels (Index, Store, PyNCCL)
+2. FlashInfer attention integration
+3. KV cache management patterns
+4. Distributed inference with tensor parallelism
+
+**Examples**:
+- `01_mini_sglang_kernels/` - Custom CUDA kernels
+- `02_flashinfer_attention/` - Prefill and decode attention
+- `03_kv_cache_management/` - Paged KV cache
+- `04_distributed_inference/` - Multi-GPU patterns
+
+---
+
+### Chapter 13: FlashInfer and FlashInfer-Bench (NEW)
+**Goal**: Master interchangeable kernel development with FlashInfer-Bench
+
+**Content**:
+1. FlashInfer architecture (block-sparse format, JIT, Plan-Run)
+2. FlashInfer Trace Schema (Definition, Solution, Workload, Trace)
+3. The `apply()` mechanism for dynamic kernel substitution
+4. Multi-language kernel implementation (Triton, CUDA, TileLang)
+5. Integration with serving systems (SGLang, vLLM)
+
+**Examples**:
+- `01_flashinfer_basics/` - FlashInfer API usage
+- `02_trace_schema/` - Defining kernels and solutions
+- `03_apply_mechanism/` - Dynamic kernel routing
+- `04_custom_kernels/` - Multi-language implementations
+- `05_integration/` - Serving system integration
+
+**Exercises**:
+- `01_triton_rmsnorm/` - Implement and register Triton RMSNorm
+- `02_interchangeable_attention/` - Full multi-language attention kernel
+
+**Key Learning**: Implement the same kernel in multiple languages and make them interchangeable at runtime using FlashInfer-Bench's `apply()` mechanism.
+
+---
+
 ## Repository Structure
 
 ```
@@ -339,7 +381,9 @@ cuda-kernel-tutorial/
 │   ├── 08_tilelang/
 │   ├── 09_sparse_attention/
 │   ├── 10_moe_accelerators/
-│   └── 11_capstone/
+│   ├── 11_capstone/
+│   ├── 12_llm_serving/
+│   └── 13_flashinfer_bench/
 ├── common/
 │   ├── include/
 │   │   ├── cuda_utils.cuh
